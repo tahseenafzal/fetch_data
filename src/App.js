@@ -5,13 +5,13 @@ function App() {
   let [repos, setRepos] = useState([{}]);
 
   useEffect(() => {
-    async function getData() {
+    const getData = async () => {
       const response = await fetch(
         "https://api.github.com/users/tahseenafzal/repos"
       );
       const data = await response.json();
       setRepos(data);
-    }
+    };
     getData();
   }, []);
   return (
